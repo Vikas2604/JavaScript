@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RPS Game</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    div {
+      margin-top: 10%;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    button {
+      width: 20%;
+      height: 100px;
+      border: none;
+      background-color: bisque;
+      font-size: 1.5em;
+    }
+
+    button:hover {
+      background-color: burlywood;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Rock Paper Scissors</h1>
+  <div>
+    <button onclick="playGame('Rock')">Rock</button>
+    <button onclick="playGame('Paper')">Paper</button>
+    <button onclick="playGame('Scissors')">Scissors</button>
+  </div>
+  <h1 id="result"></h1>
+  <script>
+    function playGame(playerChoice) {
+      const random = Math.random();
+      let compChoice = ' ';
+
+      if (random < 1 / 3) {
+        compChoice = 'Rock';
+      } else if (random < 2 / 3) {
+        compChoice = 'Paper';
+      } else {
+        compChoice = 'Scissors';
+      }
+
+      let result = ' ';
+
+      if (playerChoice === compChoice) {
+        result = 'It is a Tie';
+      } else if (
+        (playerChoice === 'Rock' && compChoice === 'Scissors') ||
+        (playerChoice === 'Paper' && compChoice === 'Rock') ||
+        (playerChoice === 'Scissors' && compChoice === 'Paper')
+      ) {
+        result = 'Congrats! You Won!'
+      } else {
+        result = 'You Lost... Better Luck Next Time';
+      }
+
+      document.getElementById('result').textContent = `Your Choice was ${playerChoice} and the Computer Chose ${compChoice} : ${result} `;
+
+    }
+  </script>
+</body>
+
+</html>

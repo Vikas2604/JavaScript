@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Object</title>
+  <style>
+    button {
+      width: 15%;
+      height: 30px;
+    }
+  </style>
+</head>
+
+<body id="theme">
+  <button onclick="themeChange()">Change Theme</button>
+  <h1>
+    Product
+  </h1>
+  <h3 id="productName"></h3>
+  <script>
+    const product = {
+      name: 'Apple',
+      price: 140,
+      qty: '100kg'
+    };
+
+    document.getElementById('productName').textContent = (product.name);
+
+
+    const styleChange = document.getElementById('theme');
+
+    // function themeChange() {
+    //   styleChange.style.backgroundColor = 'black';
+    //   styleChange.style.color = 'white';
+    // }
+    // function themeChange() {
+    //   if (onclick == 1) {
+    //     styleChange.style.backgroundColor = 'black';
+    //     styleChange.style.color = 'white';
+    //   } else if (onclick == 2) {
+    //     styleChange.style.backgroundColor = 'white';
+    //     styleChange.style.color = 'black';
+    //   }
+    // }
+
+    // if (onclick == 1) {
+    //   function themeChange() {
+    //     styleChange.style.backgroundColor = 'black';
+    //     styleChange.style.color = 'white';
+    //   }
+    // } else if (onclick == 2) {
+    //   function themeChange() {
+    //     styleChange.style.backgroundColor = 'white';
+    //     styleChange.style.color = 'black';
+    //   }
+    // }
+
+  </script>
+</body>
+
+</html>

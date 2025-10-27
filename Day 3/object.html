@@ -23,7 +23,15 @@
     const product = {
       name: 'Apple',
       price: 140,
-      qty: '100kg'
+      qty: '100kg',
+      rating: {
+        stars: 4.5,
+        count: 89
+      },
+      fun: function checking() {
+        console.log(`Product Name is ${product.name}`);
+      }
+
     };
 
     document.getElementById('productName').textContent = (product.name);
@@ -56,6 +64,15 @@
     //     styleChange.style.color = 'black';
     //   }
     // }
+
+    product.fun(); //Calling function within the object to check weather it is working or not.
+    console.log(JSON.stringify(product));
+
+
+    const jsonString = JSON.stringify(product);
+
+    console.log(JSON.parse(jsonString));
+
 
   </script>
 </body>

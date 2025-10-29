@@ -14,7 +14,7 @@
 </head>
 
 <body id="theme">
-  <button onclick="themeChange()">Change Theme</button>
+  <button>Change Theme</button>
   <h1>
     Product
   </h1>
@@ -72,6 +72,59 @@
     const jsonString = JSON.stringify(product);
 
     console.log(JSON.parse(jsonString));
+
+
+
+    console.log('hello'.length);
+    console.log('hello'.toUpperCase());
+
+    const object1 = {
+      msg: 'hello'
+    };
+
+    console.log(object1);
+    const object2 = object1;
+
+    console.log(object2);
+
+    const object3 = {
+      msg: 'hello'
+    };
+
+    console.log(object3);
+
+    console.log(object3 === object1);
+    console.log(object1 === object2);
+
+    const object4 = {
+      msg: 'hello',
+      price: 299
+    };
+
+    const { msg, price } = object4;
+
+    console.log(msg);
+    console.log(price);
+
+
+    const object5 = {
+      msg
+    };
+
+    console.log(object5);
+
+    const object6 = {
+      // method: function fun() {
+      //   console.log('new');
+      // }
+
+      method() {
+        console.log('new');
+      }
+    };
+
+    object6.method();
+    console.log(object6);
 
 
   </script>

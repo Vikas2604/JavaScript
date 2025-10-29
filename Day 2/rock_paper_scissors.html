@@ -65,11 +65,29 @@
   </div>
   <script>
 
-    const score = {
+    let score = JSON.parse(localStorage.getItem('score')) || {
       wins: 0,
       losses: 0,
       ties: 0
     };
+
+    console.log(score);
+
+    // if (score === null) {
+    //   score = {
+    //     wins: 0,
+    //     losses: 0,
+    //     ties: 0
+    //   }
+    // };
+
+    // console.log(localStorage.getItem('result'));
+
+    function updateScoreDisplay() {
+      document.getElementById('wins').textContent = score.wins;
+      document.getElementById('losses').textContent = score.losses;
+      document.getElementById('ties').textContent = score.ties;
+    }
 
     function playGame(playerChoice) {
       const random = Math.random();
@@ -87,41 +105,58 @@
 
       if (playerChoice === compChoice) {
         result = 'It is a Tie';
+        score.ties += 1;
       } else if (
         (playerChoice === 'Rock' && compChoice === 'Scissors') ||
         (playerChoice === 'Paper' && compChoice === 'Rock') ||
         (playerChoice === 'Scissors' && compChoice === 'Paper')
       ) {
         result = 'Congrats! You Won!'
+        score.wins += 1;
       } else {
         result = 'You Lost... Better Luck Next Time';
+        score.losses += 1;
       }
 
       document.getElementById('result').textContent = `Your Choice was ${playerChoice} and the Computer Chose ${compChoice} : ${result} `;
 
-      if (result === 'Congrats! You Won!') {
-        score.wins += 1;
-      } else if (result === 'You Lost... Better Luck Next Time') {
-        score.losses -= 1;
-      } else if (result === 'It is a Tie') {
-        score.ties += 1;
+      // if (result === 'Congrats! You Won!') {
+      //   score.wins += 1;
+      // } else if (result === 'You Lost... Better Luck Next Time') {
+      //   score.losses += 1;
+      // } else if (result === 'It is a Tie') {
+      //   score.ties += 1;
+      // }
+
+      document.getElementById('wins').textContent = score.wins;
+      document.getElementById('losses').textContent = score.losses;
+      document.getElementById('ties').textContent = score.ties;
+
+
+      localStorage.setItem('score', JSON.stringify(score));
+    }
+
+    // localStorage.setItem('result', 'hello');
+
+
+
+
+    function rstBtn() {
+      score = {
+        wins: 0,
+        losses: 0,
+        ties: 0
       }
 
       document.getElementById('wins').textContent = score.wins;
       document.getElementById('losses').textContent = score.losses;
       document.getElementById('ties').textContent = score.ties;
+
+      localStorage.setItem('score', JSON.stringify(score));
+      document.getElementById('ties').textContent = alert("Score Reset!");
     }
 
-    function rstBtn() {
-      score.wins = 0;
-      score.losses = 0;
-      score.ties = 0;
-
-      document.getElementById('wins').textContent = score.wins;
-      document.getElementById('losses').textContent = score.losses;
-      document.getElementById('ties').textContent = score.ties;
-    }
-
+    window.onload = updateScoreDisplay;
 
   </script>
 </body>

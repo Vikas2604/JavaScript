@@ -18,14 +18,12 @@
   <h1>Amazon Shipping Calculator</h1>
   <h2>Orders under ₹499 = ₹99 Shipping </h2>
   <h2>Orders over ₹499 = FREE Shipping</h2>
-  <input placeholder="Cost of Order" id="cost-input" onkeydown="    
-  if (event.key === 'Enter') {
-      shippingCalculaor();
-    }">
+  <input placeholder="Cost of Order" id="cost-input" onkeydown="handleCostKeydown(event)">
   <button onclick="shippingCalculaor()">Calculate</button>
   <h1 class="calculated-shipping"></h1>
 
   <script>
+    // window.document
 
     // document.body.innerHTML = 'hello';
     // document.title = 'New DOM'; 
@@ -72,6 +70,11 @@
 
     }
 
+    function handleCostKeydown(event) {
+      if (event.key === 'Enter') {
+        shippingCalculaor();
+      }
+    }
 
 
 

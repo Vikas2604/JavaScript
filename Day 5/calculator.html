@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <style>
+    body {
+      text-align: center;
+    }
+
+    input {
+      padding: 10px;
+      margin: 10px;
+      width: 20%;
+    }
+
+    button {
+      padding: 5px;
+      width: 8%;
+      margin: 2px;
+      /* border: none; */
+    }
+
+    .clear-btn {
+      padding: 10px;
+      color: red;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <input placeholder="Enter the Numbers" id="input-box">
+  <button class="clear-btn" id="clear-btn">C</button>
+
+  <div class="num-holder">
+    <button>7</button>
+    <button>8</button>
+    <button>9</button>
+    <button>+</button>
+  </div>
+  <div class="num-holder">
+    <button>4</button>
+    <button>5</button>
+    <button>6</button>
+    <button>-</button>
+
+  </div>
+  <div class="num-holder">
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>*</button>
+  </div>
+  <div class="num-holder">
+    <button>0</button>
+    <button>.</button>
+    <button>=</button>
+    <button>/</button>
+  </div>
+  <script>
+    const inputBox = document.querySelector('#input-box');
+
+    console.log(inputBox.value);
+
+    function onEnter(event) {
+      if (event.key === 'Enter') {
+
+      }
+    }
+
+    const clearBtn = document.querySelector('#clear-btn');
+    function clear() {
+      clearBtn
+    }
+
+  </script>
+</body>
+
+</html>

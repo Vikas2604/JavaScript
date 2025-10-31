@@ -16,17 +16,20 @@
       width: 20%;
     }
 
-    button {
-      padding: 5px;
-      width: 8%;
-      margin: 2px;
-      /* border: none; */
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      gap: 1em;
     }
 
-    .clear-btn {
-      padding: 10px;
-      color: red;
-      font-size: 1rem;
+    .item {
+      padding: 1.5em;
+      background-color: black;
+      color: white;
+      text-align: center;
+      border-radius: 8px;
+      font-size: 2rem;
     }
   </style>
 </head>
@@ -36,30 +39,16 @@
   <input placeholder="Enter the Numbers" id="input-box">
   <button class="clear-btn" id="clear-btn">C</button>
 
-  <div class="num-holder">
-    <button>7</button>
-    <button>8</button>
-    <button>9</button>
-    <button>+</button>
-  </div>
-  <div class="num-holder">
-    <button>4</button>
-    <button>5</button>
-    <button>6</button>
-    <button>-</button>
-
-  </div>
-  <div class="num-holder">
-    <button>1</button>
-    <button>2</button>
-    <button>3</button>
-    <button>*</button>
-  </div>
-  <div class="num-holder">
-    <button>0</button>
-    <button>.</button>
-    <button>=</button>
-    <button>/</button>
+  <div class="grid-container">
+    <button class="item">7</button>
+    <button class="item">8</button>
+    <button class="item">9</button>
+    <button class="item">4</button>
+    <button class="item">5</button>
+    <button class="item">6</button>
+    <button class="item">1</button>
+    <button class="item">2</button>
+    <button class="item">3</button>
   </div>
   <script>
     const inputBox = document.querySelector('#input-box');

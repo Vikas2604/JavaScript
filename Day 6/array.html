@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2em;
+    }
+
+    input {
+      padding: 10px;
+    }
+  </style>
+</head>
+
+
+<body>
+  <h1>
+    To-Do List
+  </h1>
+  <input placeholder="Enter The Task" class="js-task-input">
+  <button onclick="addToDo()">Add</button>
+  <h3></h3>
+
+  <script>
+    const todoList = [];
+
+    function addToDo() {
+      const inputElement = document.querySelector('.js-task-input');
+
+      const task = inputElement.value;
+      console.log(task);
+
+      todoList.push(task);
+      console.log(todoList);
+
+      inputElement.value = '';
+      
+    }
+
+
+  </script>
+</body>
+
+</html>

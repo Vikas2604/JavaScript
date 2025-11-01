@@ -1,6 +1,7 @@
 /*
   Print the given pattern
 
+
   * 
   * * 
   * * * 
@@ -15,3 +16,5 @@ for (i = 0; i < 5; i++) {
   }
   console.log(row);
 }
+
+console.log('Practice More!');
